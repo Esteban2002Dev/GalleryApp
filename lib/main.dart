@@ -44,6 +44,7 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
   
+  
   void _clearCounter() {
     setState(() {
       _counter = 0;
