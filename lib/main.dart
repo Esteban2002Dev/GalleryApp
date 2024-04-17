@@ -13,8 +13,8 @@ class MyApp extends StatelessWidget {
       title: 'GalleryApp',
       initialRoute: 'Home',
       routes: {
-        'Home': ( _ ) => HomeScreen(),
-        'Details': ( _ ) => DetailsScreen(),
+        'Home': ( _ ) => const HomeScreen(),
+        'Details': ( _ ) => const DetailsScreen(),
       },
     );
   }
