@@ -1,11 +1,12 @@
 import "package:flutter/material.dart";
+import "package:galleryapp/widgets/widgets.dart";
 
 class DetailsScreen extends StatelessWidget {
   const DetailsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-
+    bool star = false;
     // final String movie = ModalRoute.of(context)?.settings.arguments.toString() ?? 'No movie';
 
     return Scaffold(
@@ -14,7 +15,11 @@ class DetailsScreen extends StatelessWidget {
           const _CustomAppBar(),
           SliverList(
               delegate: SliverChildListDelegate([
-                const _PosterAndTitle()
+                const _PosterAndTitle(),
+                const _Overview(),
+                const _Overview(),
+                const _Overview(),
+                const CastingCards()
               ])
           )
         ]
@@ -61,7 +66,8 @@ class _PosterAndTitle extends StatelessWidget {
           ClipRRect(
             borderRadius: BorderRadius.circular(20),
             child: const FadeInImage(
-              image: NetworkImage('https://via.placeholder.com/200x300'),
+              // image: NetworkImage('https://via.placeholder.com/200x300'),
+              image: AssetImage('assets/300x400.png'),
               placeholder: AssetImage('assets/no-image.jpg'),  
               height: 150,
             ),
@@ -72,6 +78,7 @@ class _PosterAndTitle extends StatelessWidget {
           Column(
             crossAxisAlignment:  CrossAxisAlignment.start,
             children: [
+              const Icon(Icons.star_outline, size: 15, color: Colors.grey),
               Text('movie.title', style: textTheme.headlineMedium, overflow: TextOverflow.ellipsis,
               maxLines: 2),
               Text('movie.originalTitle', style: textTheme.titleMedium, overflow: TextOverflow.ellipsis),
@@ -86,6 +93,21 @@ class _PosterAndTitle extends StatelessWidget {
             ],
           )
         ]
+      ),
+    );
+  }
+}
+
+class _Overview extends StatelessWidget {
+  const _Overview();
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+      child: Text('Lorem ipsum dolor sit amet, consectetur adip pro id eu non et ull nisi adipsisicing qui excepteur.',
+        textAlign: TextAlign.justify,
+        style: Theme.of(context).textTheme.titleMedium,
       ),
     );
   }

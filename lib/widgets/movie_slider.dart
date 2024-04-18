@@ -45,12 +45,13 @@ class _MoviePoster extends StatelessWidget {
         ClipRRect(
           borderRadius: BorderRadius.circular(20),
           child: const FadeInImage(
-            placeholder: NetworkImage('assets/no-image.jpg'),
-            image: NetworkImage('https://via.placeholder.com/300x400.png'),
+            placeholder: AssetImage('assets/no-image.jpg'),
+            // image: NetworkImage('https://via.placeholder.com/300x400.png'),
+            image: AssetImage('assets/300x400.png'),
             width: 140,
             height: 190,
             fit: BoxFit.cover,
-            ),
+          ),
         ),
         const SizedBox(height: 5),
         const Text(
